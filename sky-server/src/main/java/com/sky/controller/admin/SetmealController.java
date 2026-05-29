@@ -49,4 +49,12 @@ public class SetmealController {
         SetmealVO setmealVO = setmealService.getSetmealById(id);
         return Result.success(setmealVO);
     }
+
+    // 修改套餐
+    @PutMapping
+    public Result update(@RequestBody SetmealDTO setmealDTO){
+        log.info("需要修改的套餐为{}",setmealDTO);
+        setmealService.update(setmealDTO);
+        return Result.success();
+    }
 }

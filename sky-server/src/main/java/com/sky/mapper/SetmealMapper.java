@@ -35,4 +35,8 @@ public interface SetmealMapper {
     List<Setmeal> getSetmealByIds(List<Long> ids);
 
     Setmeal getSetmealById(Long id);
+
+    @AutoFill(OperationType.UPDATE)
+    void update(Setmeal setmeal);
+
 }
