@@ -41,4 +41,12 @@
         </foreach>
     </delete>
 
+    <select id="getSetmealById" parameterType="Long" resultType="com.sky.entity.Setmeal">
+        select *,c.name categoryName from setmeal s left join
+        category c on c.id = s.category_id
+        <where>
+            s.id = #{id}
+        </where>
+    </select>
+
 </mapper>

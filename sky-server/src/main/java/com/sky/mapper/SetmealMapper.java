@@ -33,4 +33,6 @@ public interface SetmealMapper {
     Page<SetmealVO> pageQuery(SetmealPageQueryDTO setmealPageQueryDTO);
 
     List<Setmeal> getSetmealByIds(List<Long> ids);
+
+    Setmeal getSetmealById(Long id);
 }
