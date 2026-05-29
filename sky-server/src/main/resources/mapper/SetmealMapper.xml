@@ -26,4 +26,19 @@
         order by s.create_time desc
     </select>
 
+    <select id="getSetmealByIds" resultType="com.sky.entity.Setmeal" parameterType="list">
+        select * from setmeal where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+                #{id}
+        </foreach>
+
+    </select>
+
+    <delete id="deleteBatch" parameterType="list">
+        delete from setmeal where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
 </mapper>

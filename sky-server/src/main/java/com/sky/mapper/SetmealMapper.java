@@ -11,8 +11,13 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface SetmealMapper {
+
+
+    void deleteBatch(List<Long> ids);
 
     /**
      * 根据分类id查询套餐的数量
@@ -26,4 +31,6 @@ public interface SetmealMapper {
     void add(Setmeal setmeal);
 
     Page<SetmealVO> pageQuery(SetmealPageQueryDTO setmealPageQueryDTO);
+
+    List<Setmeal> getSetmealByIds(List<Long> ids);
 }
