@@ -71,4 +71,12 @@ public class DishController {
         dishService.setStatus(status,id);
         return Result.success();
     }
+
+    // 根据分类id查询菜品
+    @GetMapping("list")
+    public Result<List<Dish>> getDishList(Long categoryId){
+        log.info("需要查询的分类菜品id为{}",categoryId);
+        List<Dish> list = dishService.getDishList(categoryId);
+        return Result.success(list);
+    }
 }
