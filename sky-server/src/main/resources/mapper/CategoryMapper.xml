@@ -22,8 +22,8 @@
             <if test="type != null">type = #{type},</if>
             <if test="status != null">status = #{status},</if>
             <if test="sort != null">sort = #{sort},</if>
-            <if test="updateTime != null">update_Time = #{updateTime},</if>
-            <if test="createUser != null">create_User = #{create}</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="createUser != null">create_user = #{createUser}</if>
         </set>
         where id = #{id}
     </update>

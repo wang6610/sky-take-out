@@ -4,10 +4,13 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
+
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Map;
 
+@Slf4j
 public class JwtUtil {
     /**
      * 生成jwt
@@ -25,6 +28,10 @@ public class JwtUtil {
         // 生成JWT的时间
         long expMillis = System.currentTimeMillis() + ttlMillis;
         Date exp = new Date(expMillis);
+
+        log.info("生成的Jwt令牌时间为：{}",expMillis);
+
+
 
         // 设置jwt的body
         JwtBuilder builder = Jwts.builder()
